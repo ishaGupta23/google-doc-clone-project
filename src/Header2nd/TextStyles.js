@@ -7,16 +7,11 @@ import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import styles from './buttonwrap.module.css'
 
-const options = [
-  '',
-  <p> NormalText</p> ,
-  <title>Title'</title>,
-  <p> Subtitle</p>,
-  <h1>Heading 1</h1>,
-  <h2>Heading 2</h2>,
-  <h3> Heading 3</h3>,
 
-];
+
+
+
+
 
 export default function TextStyles() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -34,6 +29,36 @@ export default function TextStyles() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const createElement = (tagname, text) => {
+    const node = document.createElement(tagname);
+    node.innerText = text;
+    return node;
+  };
+
+  const format = ({ tagname, action }: any, event) => {
+    const selection = window.getSelection().toString();
+    const range = window.getSelection().getRangeAt(0);
+
+    const insertNode = (node) => {
+      range.deleteContents();
+      range.insertNode(node);
+    };
+
+    if (tagname) {
+      insertNode(createElement(tagname, selection));
+      return;
+    }
+  }
+  const options = [
+    '',
+    <p onClick={() => format({ tagname: 'p' })}> NormalText</p> ,
+    <title onClick={() => format({ tagname: 'b' })}>Title'</title>,
+    <p> Subtitle</p>,
+    <h1 onClick={() => format({ tagname: 'h1' })}>Heading 1</h1>,
+    <h2 onClick={() => format({ tagname: 'h2' })}>Heading 2</h2>,
+    <h3 onClick={() => format({ tagname: 'h3' })}> Heading 3</h3>,
+  
+  ];
 
   return (
     <div className= {styles.wrapper}>

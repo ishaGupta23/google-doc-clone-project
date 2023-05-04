@@ -6,17 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const options = [
-  <h3>More fonts</h3>,
-  <p style={{fontFamily:'arial'}}>Arial</p>,
-  <p style={{fontFamily:'impact'}}>Impact</p>,
-  <p style={{fontFamily:'lexend'}}> Lexend</p>,
-  <p style={{fontFamily:'lobster'}}>Lobster</p>,
-  <p style={{fontFamily:' Caveat'}}> Caveat</p>,
-  <p style={{fontFamily:'merriweather'}}>Merriweather</p>,
-  <p style={{fontFamily:'Comic Sans MS'}}> Comic Sans MS</p>,
-  <p style={{fontFamily:'eb garmond'}}> EB Garmond</p>
-];
+
 
 export default function FontSize() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,7 +15,7 @@ export default function FontSize() {
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  const divRef = React.useRef();
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
     setAnchorEl(null);
@@ -34,6 +24,40 @@ export default function FontSize() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const createElement = (tagname, text) => {
+    const node = document.createElement(tagname);
+    node.innerText = text;
+    return node;
+  };
+
+  const format = ({ tagname, action }: any, event) => {
+    const selection = window.getSelection().toString();
+    const range = window.getSelection().getRangeAt(0);
+
+    const insertNode = (node) => {
+      range.deleteContents();
+      range.insertNode(node);
+    };
+
+    if (tagname) {
+      insertNode(createElement(tagname, selection));
+      return;
+    }
+    if (action == 'impact') {
+        divRef.current.firstElementChild.style.fontFamily = 'Comic Sans MS';
+      }
+  }
+  const options = [
+    <h3>More fonts</h3>,
+    <p style={{fontFamily:'arial'}}onClick={() => format({ tagname: 'arial' })}>Arial</p>,
+    <p style={{fontFamily:'impact'}}onClick={() => format({ tagname: 'impact'})}>Impact</p>,
+    <p style={{fontFamily:'lexend'}}> Lexend</p>,
+    <p style={{fontFamily:'lobster'}}>Lobster</p>,
+    <p style={{fontFamily:' Caveat'}}> Caveat</p>,
+    <p style={{fontFamily:'merriweather'}}>Merriweather</p>,
+    <p style={{fontFamily:'Comic Sans MS'}}> Comic Sans MS</p>,
+    <p style={{fontFamily:'eb garmond'}}> EB Garmond</p>
+  ];
 
   return (
     <div>
