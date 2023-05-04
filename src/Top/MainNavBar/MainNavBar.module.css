@@ -1,0 +1,22 @@
+.Container{
+    display: flex;
+}
+
+.DocImg img{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.Headiding{
+    display: flex;
+   
+    align-items: baseline;
+    text-align: left;
+    margin-left: 15px;
+    justify-content: flex-start
+}
+.Headiding h3{
+    padding: 1px;
+    font-weight: 150;
+    margin-top: 0px;
+}
