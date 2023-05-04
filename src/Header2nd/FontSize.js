@@ -50,7 +50,7 @@ export default function FontSize() {
           aria-label="when device is locked"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
-          sx={{height:"4vh"}}
+          sx={{height:"1.8rem", }}
         >
           <ListItemText
             primary= {options[selectedIndex]}

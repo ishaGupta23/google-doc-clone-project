@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <MainNavBar/>
       <Header2nd/>
-      <Editable/>
+     <Editable/>
     </div>
   );
 }

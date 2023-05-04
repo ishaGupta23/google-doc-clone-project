@@ -50,7 +50,7 @@ export default function DropDownSize() {
           aria-label="when device is locked"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
-          sx={{height:"4vh"}}
+          sx={{height:"1rem"}}
         >
           <ListItemText
             primary= {options[selectedIndex]}
