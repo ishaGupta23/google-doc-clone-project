@@ -1,0 +1,17 @@
+.main{
+
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    height: 100%;
+    border-radius:5rem;
+   margin-left: 1%;
+   margin-right: 2%;
+
+}
+.icon{ 
+    font-size: 1.5rem;
+}
