@@ -33,10 +33,10 @@ const IconButtons = () => {
     return (    
         <div>
             <IconButton> <BiUndo  className={styles.icon} 
-            onClick={() => format({ tagname: 'undo' })}/></IconButton>
-            <IconButton><BiRedo className={styles.icon}/></IconButton>
+            onClick={() => document.execCommand('undo')}/></IconButton>
+            <IconButton><BiRedo className={styles.icon}
+            onClick={() => document.execCommand('redo')}/></IconButton>
             <IconButton><AiOutlinePrinter className={styles.icon}/></IconButton>
-            <IconButton> <MdOutlineSpellcheck className={styles.icon}/></IconButton>
             <IconButton><AiOutlineFormatPainter className={styles.icon}/></IconButton>
             
             
