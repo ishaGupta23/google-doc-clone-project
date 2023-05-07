@@ -1,6 +1,13 @@
-.Container{
+.MainContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.LeftSection{
     display: flex;
 }
+
 
 .DocImg img{
   width: 50px;
@@ -19,4 +26,56 @@
     padding: 1px;
     font-weight: 150;
     margin-top: 0px;
+}
+.Headiding input{
+    margin:4px;
+    margin-bottom: 7px;
+    outline: 1px solid blue;
+    padding: 1px;
+    border-radius: 5px;
+}
+
+/* --------------------------------Right section style---------------------- */
+.Logo{
+    width: 70px;
+    font-weight: 700;
+    font-size: 50px;
+    cursor: pointer;
+}
+.RightSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .1rem;
+    gap: 25px;
+}
+.RightSection button{
+    border-radius: 20px;
+    padding: 5px;
+    width: 90px;
+    border: none;
+    height: 35;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: aquamarine;
+    transition: 0.5s;
+}
+.RightSection button:hover{
+    background-color: rgb(39, 163, 122);
+}
+.IconsSection{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.Icons{
+    width: 90px;
+    display: flex;
+    gap:22px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.Share{
+    display: flex;
 }

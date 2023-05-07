@@ -6,37 +6,46 @@ import styles from './header2nd.module.css'
 import { IconButton } from '@mui/material';
 
 const IconButtons = () => {
-    const createElement = (tagname, text) => {
-        const node = document.createElement(tagname);
-        node.innerText = text;
-        return node;
-      };
-      const divRef = React.useRef();
-      const format = ({ tagname, action }: any, event) => {
-        const selection = window.getSelection().toString();
-        const range = window.getSelection().getRangeAt(0);
-    
-        const insertNode = (node) => {
-          range.deleteContents();
-          range.insertNode(node);
-        };
-    
-        if (tagname) {
-          insertNode(createElement(tagname, selection));
-          return;
-        }
-        if (action === 'undo') {
-            divRef.current.innerHTML = divRef.current.innerText;
-          }
-    
-      }
+  function handlePrint() {
+    const printContents = document.querySelector('.content-box').innerHTML;
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Print</title>
+          <style>
+            @media print {
+              body * {
+                visibility: hidden;
+              }
+              .content-box, .content-box * {
+                visibility: visible;
+              }
+              .content-box {
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="content-box">${printContents}</div>
+        </body>
+      </html>
+    `);
+  
+    printWindow.document.close();
+    printWindow.print();
+    printWindow.close();
+  }
     return (    
         <div>
             <IconButton> <BiUndo  className={styles.icon} 
             onClick={() => document.execCommand('undo')}/></IconButton>
             <IconButton><BiRedo className={styles.icon}
             onClick={() => document.execCommand('redo')}/></IconButton>
-            <IconButton><AiOutlinePrinter className={styles.icon}/></IconButton>
+            <IconButton><AiOutlinePrinter className={styles.icon} onClick={handlePrint}/></IconButton>
             <IconButton><AiOutlineFormatPainter className={styles.icon}/></IconButton>
             
             

@@ -7,7 +7,9 @@ import Editable from './Textarea/textArea';
 function App() {
   return (
     <div className="App">
-      <MainNavBar/>
+     <div className="MainNavBarComp">
+          <MainNavBar />
+        </div>
       <Header2nd/>
      <Editable/>
     </div>

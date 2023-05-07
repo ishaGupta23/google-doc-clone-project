@@ -8,7 +8,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { ToggleButton } from '@mui/material';
 import { AlignHorizontalCenter, FormatAlignCenterOutlined } from '@mui/icons-material';
 import { alignProperty } from '@mui/material/styles/cssUtils';
-import FontSize from './FontSize';
+
 
 
 export default function DropDownSize() {
