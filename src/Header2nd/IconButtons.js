@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiUndo,BiRedo } from "react-icons/bi";
 import { AiOutlinePrinter,AiOutlineFormatPainter} from "react-icons/ai";
-import { MdOutlineSpellcheck } from "react-icons/md";
+// import { MdOutlineSpellcheck } from "react-icons/md";
 import styles from './header2nd.module.css'
 import { IconButton } from '@mui/material';
 
