@@ -5,7 +5,7 @@ import ContentEditable from "react-contenteditable";
 
 const Editable = () => {
   const [content, setContent] = useState("");
- 
+
   const onContentChange = (evt) => {
     setContent(evt.currentTarget.innerHTML);
   };
@@ -20,13 +20,13 @@ const Editable = () => {
         onBlur={onContentChange}
         html={content}
         ref={divRef}
+        className="content-box"
         dangerouslySetInnerHTML={{
           __html: content,
         }}
       />
-
     </div>
   );
 };
 
-export default Editable;
+export default Editable;
