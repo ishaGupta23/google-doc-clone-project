@@ -4,16 +4,22 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import styles from './buttonwrap.module.css'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
+const options = [
+  <h3>More fonts</h3>,
+  <p style={{fontFamily:'arial'}}>Arial</p>,
+  <p style={{fontFamily:'impact'}}>Impact</p>,
+  <p style={{fontFamily:'lexend'}}> Lexend</p>,
+  <p style={{fontFamily:'lobster'}}>Lobster</p>,
+  <p style={{fontFamily:' Caveat'}}> Caveat</p>,
+  <p style={{fontFamily:'merriweather'}}>Merriweather</p>,
+  <p style={{fontFamily:'Comic Sans MS'}}> Comic Sans MS</p>,
+  <p style={{fontFamily:'eb garmond'}}> EB Garmond</p>
+];
 
-
-
-
-
-export default function TextStyles() {
+export default function FontSize() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
   const open = Boolean(anchorEl);
@@ -30,22 +36,12 @@ export default function TextStyles() {
     setAnchorEl(null);
   };
 
-  const options = [
-   "   ",
-    <p  onClick={() => document.document.execCommand('formatBlock', false, 'p')}> NormalText</p> ,
-    <p onClick={() => document.execCommand("fontSize", false, "50px")} >Title'</p>,
-    <p onClick={() =>document.execCommand('formatBlock', false, 'h1')}>Heading 1</p>,
-    <p onClick={() => document.execCommand('formatBlock', false, 'h2')} >Heading 2</p>,
-    <p onClick={() => document.execCommand('formatBlock', false, 'h3')}> Heading 3</p>,
-  
-  ];
-
   return (
-    <div className= {styles.wrapper}>
+    <div>
       <List
         component="nav"
         aria-label="Device settings"
-       
+        sx={{ bgcolor: 'aliceblue' }}
       >
         <ListItem
           button
@@ -55,11 +51,11 @@ export default function TextStyles() {
           aria-label="when device is locked"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
-          sx={{height:"2.5rem",width:"7rem" }}
+          sx={{height:"1.8rem", }}
         >
           <ListItemText
-          primary=  {options[selectedIndex]}
-           
+            primary= {options[selectedIndex]}
+            
           />
         </ListItem>
       </List>

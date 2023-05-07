@@ -20,7 +20,10 @@ import { MuiColorInput } from 'mui-color-input'
 import FontType from './FontType';
 import IconButtons from './IconButtons';
 import TextStyles from './TextStyles';
-import { Button } from '@mui/base';
+import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
+import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
+import { Button, ButtonGroup, IconButton } from '@mui/material';
+
 
 
 
@@ -66,14 +69,24 @@ export default function CustomizedDividers() {
         elevation={0}
         sx={{
           display: 'flex',
+          flexDirection:'center',
           border: (theme) => `1px solid ${theme.palette.divider}`,
           flexWrap: 'wrap',
+          backgroundColor:"#d7ecff",
+          borderRadius:'1.5rem'
+          
+          
         }}
-      >
-        <IconButtons/>
-        
+      > 
+          <IconButtons/>
+           <Divider orientation="vertical" flexItem />
           <TextStyles/>
-         <FontType/>
+           <Divider orientation="vertical" flexItem />
+          <FontType/>
+           <Divider orientation="vertical" flexItem />
+          
+         
+        
         <StyledToggleButtonGroup
           size="small"
           value={alignment}
@@ -135,6 +148,11 @@ export default function CustomizedDividers() {
           </ToggleButton>
           </StyledToggleButtonGroup>
           <MuiColorInput value={color}  onChange={handleChange} id="outlined-size-normal" />
+         
+           <Button sx={{color:"black"}}><FormatIndentDecreaseIcon  onClick={() => document.execCommand("outdent")}/></Button> 
+           <Divider orientation="vertical" flexItem />
+           <Button sx={{color:"black"}}><FormatIndentIncreaseIcon onClick={() => document.execCommand("indent")}/></Button> 
+           
           
       </Paper>
 
