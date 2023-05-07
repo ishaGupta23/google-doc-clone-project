@@ -47,11 +47,7 @@ const IconButtons = () => {
             <IconButton><BiRedo className={styles.icon}
             onClick={() => document.execCommand('redo')}/></IconButton>
             <IconButton><AiOutlinePrinter onClick={handlePrint} className={styles.icon}/></IconButton>
-            <IconButton><AiOutlineFormatPainter className={styles.icon}/></IconButton>
-            
-            
-            
-            
+            <IconButton><AiOutlineFormatPainter className={styles.icon}/></IconButton> 
             
         </div>
     );
