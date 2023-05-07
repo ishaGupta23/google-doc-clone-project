@@ -5,20 +5,14 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { CiTextAlignCenter,CiTextAlignJustify,CiTextAlignLeft
+,CiTextAlignRight} from "react-icons/ci";
 
 const options = [
-  <h3>More fonts</h3>,
-  <p style={{fontFamily:'arial'}}>Arial</p>,
-  <p style={{fontFamily:'impact'}}>Impact</p>,
-  <p style={{fontFamily:'lexend'}}> Lexend</p>,
-  <p style={{fontFamily:'lobster'}}>Lobster</p>,
-  <p style={{fontFamily:' Caveat'}}> Caveat</p>,
-  <p style={{fontFamily:'merriweather'}}>Merriweather</p>,
-  <p style={{fontFamily:'Comic Sans MS'}}> Comic Sans MS</p>,
-  <p style={{fontFamily:'eb garmond'}}> EB Garmond</p>
+  '', <CiTextAlignCenter/>,<CiTextAlignJustify/>,<CiTextAlignLeft/>,<CiTextAlignRight/>
 ];
 
-export default function FontSize() {
+export default function Allign() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
   const open = Boolean(anchorEl);
@@ -36,7 +30,7 @@ export default function FontSize() {
   };
 
   return (
-    <div>
+    <div >
       <List
         component="nav"
         aria-label="Device settings"
@@ -50,7 +44,7 @@ export default function FontSize() {
           aria-label="when device is locked"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
-          sx={{height:"1.8rem", }}
+          sx={{height:"4vh"}}
         >
           <ListItemText
             primary= {options[selectedIndex]}
