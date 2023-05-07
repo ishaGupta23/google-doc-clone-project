@@ -32,12 +32,11 @@ export default function TextStyles() {
 
   const options = [
    "   ",
-    <p > NormalText</p> ,
-    <title >Title'</title>,
-    <p> Subtitle</p>,
-    <h1 >Heading 1</h1>,
-    <h2 >Heading 2</h2>,
-    <h3 > Heading 3</h3>,
+    <p  onClick={() => document.execCommand("fontSize", false, "16px")}> NormalText</p> ,
+    <p onClick={() => document.execCommand("fontSize", false, "50px")} >Title'</p>,
+    <p onClick={() => document.execCommand("fontSize", false, "40px")}>Heading 1</p>,
+    <p onClick={() => document.execCommand("fontSize", false, "30px")} >Heading 2</p>,
+    <p onClick={() => document.execCommand("fontSize", false, "24px")}> Heading 3</p>,
   
   ];
 
@@ -46,7 +45,7 @@ export default function TextStyles() {
       <List
         component="nav"
         aria-label="Device settings"
-        sx={{ bgcolor: 'aliceblue'}}
+       
       >
         <ListItem
           button
@@ -56,11 +55,11 @@ export default function TextStyles() {
           aria-label="when device is locked"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClickListItem}
-          sx={{height:"1.8rem"}}
+          sx={{height:"2.5rem",width:"7rem" }}
         >
           <ListItemText
           primary=  {options[selectedIndex]}
-            sx={{fontSize:'1rem'}}
+           
           />
         </ListItem>
       </List>
