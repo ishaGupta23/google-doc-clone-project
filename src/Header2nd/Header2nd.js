@@ -13,10 +13,8 @@ const Header2nd = () => {
     
     return ( <div className={styles.main}>
         <div className={styles.container}>
-            <IconButtons/>
-            <FontType/>
-            <DropDownSize/>    
-            <TextStyles/>
+
+
             <ToggleButtonsMultiple/>
           
             

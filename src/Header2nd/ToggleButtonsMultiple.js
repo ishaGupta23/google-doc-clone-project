@@ -17,6 +17,11 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
 import { MuiColorInput } from 'mui-color-input'
+import FontType from './FontType';
+import IconButtons from './IconButtons';
+import TextStyles from './TextStyles';
+import { Button } from '@mui/base';
+
 
 
 
@@ -39,7 +44,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 export default function CustomizedDividers() {
   const [alignment, setAlignment] = React.useState('left');
   const [formats, setFormats] = React.useState(() => ['italic']);
-  const [color, setColor] = React.useState('#ffffff')
+  const [color, setColor] = React.useState('black')
   
   const handleChange = (color) => {
     setColor(color)
@@ -65,7 +70,10 @@ export default function CustomizedDividers() {
           flexWrap: 'wrap',
         }}
       >
-         
+        <IconButtons/>
+        
+          <TextStyles/>
+         <FontType/>
         <StyledToggleButtonGroup
           size="small"
           value={alignment}
