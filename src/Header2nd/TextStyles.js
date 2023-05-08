@@ -32,7 +32,7 @@ export default function TextStyles() {
 
   const options = [
    "   ",
-    <p  onClick={() => document.document.execCommand("fontSize", false, "16px")}> NormalText</p> ,
+    <p  onClick={() => document.execCommand("fontSize", false, "16px")}> NormalText</p> ,
     <p onClick={() => document.execCommand("fontSize", false, "50px")} >Title'</p>,
     <p onClick={() =>document.execCommand('formatBlock', false, 'h1')}>Heading 1</p>,
     <p onClick={() => document.execCommand('formatBlock', false, 'h2')} >Heading 2</p>,

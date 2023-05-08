@@ -46,8 +46,8 @@ const IconButtons = () => {
             onClick={() => document.execCommand('undo')}/></IconButton>
             <IconButton><BiRedo className={styles.icon}
             onClick={() => document.execCommand('redo')}/></IconButton>
-            <IconButton><AiOutlinePrinter onClick={handlePrint} className={styles.icon}/></IconButton>
-            <IconButton><AiOutlineFormatPainter className={styles.icon}/></IconButton>
+            <IconButton onClick={handlePrint} ><AiOutlinePrinter className={styles.icon}/></IconButton>
+            
             
             
             

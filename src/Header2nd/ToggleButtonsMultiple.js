@@ -23,6 +23,7 @@ import TextStyles from './TextStyles';
 import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
 import { Button, ButtonGroup, IconButton } from '@mui/material';
+import ImageInsert from './ImageInsert';
 
 
 
@@ -69,11 +70,11 @@ export default function CustomizedDividers() {
         elevation={0}
         sx={{
           display: 'flex',
-          flexDirection:'center',
           border: (theme) => `1px solid ${theme.palette.divider}`,
           flexWrap: 'wrap',
           backgroundColor:"#d7ecff",
-          borderRadius:'1.5rem'
+          borderRadius:'1.5rem',
+          
           
           
         }}
@@ -124,15 +125,14 @@ export default function CustomizedDividers() {
           </ToggleButton>
           <ToggleButton value="underlined" aria-label="underlined" onClick={() => document.execCommand('underline')}>
             <FormatUnderlinedIcon />
-          </ToggleButton>
-          <ToggleButton value="color" aria-label="color" >
-            <FormatColorFillIcon />
-            
+      
             <ArrowDropDownIcon />
                      
           </ToggleButton>
+
           
         </StyledToggleButtonGroup>
+        <Button><ImageInsert/></Button>
         <StyledToggleButtonGroup
           size="small"
           value={alignment}
