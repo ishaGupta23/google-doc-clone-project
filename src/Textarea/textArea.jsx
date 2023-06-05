@@ -9,7 +9,7 @@ const Editable = () => {
   const onContentChange = (evt) => {
     setContent(evt.currentTarget.innerHTML);
   };
-  const divRef = React.useRef();
+ 
   return (
     <div className="text-area">
       <ContentEditable
@@ -19,7 +19,7 @@ const Editable = () => {
         onChange={onContentChange}
         onBlur={onContentChange}
         html={content}
-        ref={divRef}
+       
         className="content-box"
         dangerouslySetInnerHTML={{
           __html: content,

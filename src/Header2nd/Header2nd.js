@@ -2,11 +2,9 @@ import React from "react";
 import styles from "./header2nd.module.css";
 import ToggleButtonsMultiple from "./ToggleButtonsMultiple";
 
-
 const Header2nd = () => {
  
-
-  return (
+return (
     <div className={styles.main}>
       <div className={styles.container}>
     <ToggleButtonsMultiple />

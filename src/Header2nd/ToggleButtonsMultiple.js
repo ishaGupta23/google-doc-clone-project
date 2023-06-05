@@ -1,5 +1,4 @@
 import * as React   from 'react';
-// import {useState}  from 'react'
 import { styled } from '@mui/material/styles';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
 import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
@@ -24,9 +23,6 @@ import FormatIndentDecreaseIcon from '@mui/icons-material/FormatIndentDecrease';
 import FormatIndentIncreaseIcon from '@mui/icons-material/FormatIndentIncrease';
 import { Button, ButtonGroup, IconButton } from '@mui/material';
 import ImageInsert from './ImageInsert';
-
-
-
 
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
@@ -55,7 +51,6 @@ export default function CustomizedDividers() {
     document.execCommand('foreColor', false, color.toLocaleString())
   }
 
-
   const handleFormat = (event, newFormats) => {
     setFormats(newFormats);
   };
@@ -74,7 +69,7 @@ export default function CustomizedDividers() {
           flexWrap: 'wrap',
           backgroundColor:"#d7ecff",
           borderRadius:'1.5rem',
-          
+          width :'98vw'
           
           
         }}
